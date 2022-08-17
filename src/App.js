@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+import { Navbar, Sidebar, ThemeSettings } from './components';
 import { Dashboard, Marketplace, Settings, Jobs,Account,Line, Exit, Area } from './pages';
 import './App.css';
 
@@ -85,7 +85,7 @@ const App = () => {
 
               </Routes>
             </div>
-            <Footer />
+
           </div>
         </div>
       </BrowserRouter>

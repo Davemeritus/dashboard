@@ -1,9 +1,9 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
+import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock, AiOutlineDashboard } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
-import { IoMdContacts } from 'react-icons/io';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft} from 'react-icons/bs';
+import { BiColorFill,BiExit } from 'react-icons/bi';
+import { IoMdContacts} from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
@@ -85,7 +85,7 @@ const customerGridStatus = (props) => (
 );
 
 export const areaPrimaryXAxis = {
-  valueType: 'DateTime',
+  valueType: 'Category',
   majorGridLines: { width: 0 },
   
 };
@@ -116,18 +116,18 @@ const areaChartData = [
     { x: 'Nov', y: 31 },
     { x: 'Dec', y: 31 },
   ],
-  // [
-  //   { x: new Date(2002, 0, 1), y: 2 },
-  //   { x: new Date(2003, 0, 1), y: 1.7 },
-  //   { x: new Date(2004, 0, 1), y: 1.8 },
-  //   { x: new Date(2005, 0, 1), y: 2.1 },
-  //   { x: new Date(2006, 0, 1), y: 2.3 },
-  //   { x: new Date(2007, 0, 1), y: 1.7 },
-  //   { x: new Date(2008, 0, 1), y: 1.5 },
-  //   { x: new Date(2009, 0, 1), y: 2.8 },
-  //   { x: new Date(2010, 0, 1), y: 1.5 },
-  //   { x: new Date(2011, 0, 1), y: 2.3 },
-  // ],
+  [
+    { x: new Date(2002, 0, 1), y: 2 },
+    { x: new Date(2003, 0, 1), y: 1.7 },
+    { x: new Date(2004, 0, 1), y: 1.8 },
+    { x: new Date(2005, 0, 1), y: 2.1 },
+    { x: new Date(2006, 0, 1), y: 2.3 },
+    { x: new Date(2007, 0, 1), y: 1.7 },
+    { x: new Date(2008, 0, 1), y: 1.5 },
+    { x: new Date(2009, 0, 1), y: 2.8 },
+    { x: new Date(2010, 0, 1), y: 1.5 },
+    { x: new Date(2011, 0, 1), y: 2.3 },
+  ],
   // [
   //   { x: new Date(2002, 0, 1), y: 0.8 },
   //   { x: new Date(2003, 0, 1), y: 1.3 },
@@ -147,7 +147,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'USA',
+    name: '',
     opacity: '0.8',
     type: 'SplineArea',
     width: '2',
@@ -200,7 +200,7 @@ export const links = [
     links: [
       {
         name: 'dashboard',
-        icon: <FiShoppingBag />,
+        icon: <AiOutlineDashboard/>,
       },
     ],
   },
@@ -223,6 +223,18 @@ export const links = [
      
     ],
   },
+
+  {
+    
+    links: [
+     
+
+      {
+        name: 'chart',
+        icon: <AiOutlineAreaChart />,
+      },
+    ],
+  },
   {
     
     links: [
@@ -233,23 +245,9 @@ export const links = [
       
       {
         name: 'exit',
-        icon: <FiEdit />,
+        icon: <BiExit/>,
       },
       
-    ],
-  },
-  {
-    
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, DateTime, SplineAreaSeries, Legend } from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Category, SplineAreaSeries, Legend } from '@syncfusion/ej2-react-charts';
 
 import { ChartsHeader } from '../../components';
 import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data/dummy';
@@ -11,7 +11,7 @@ const Area = () => {
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <ChartsHeader category="Number of companies YTD" title="" />
-      <div className="w-full">
+      {/* <div className="w-full"> */}
         <ChartComponent
           id="charts"
           primaryXAxis={areaPrimaryXAxis}
@@ -20,13 +20,13 @@ const Area = () => {
           background={currentMode === 'Dark' ? '#33373E' : '#fff'}
           legendSettings={{ background: 'white' }}
         >
-          <Inject services={[SplineAreaSeries, DateTime, Legend]} />
+          <Inject services={[SplineAreaSeries, Category]} />
           <SeriesCollectionDirective>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             {areaCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
           </SeriesCollectionDirective>
         </ChartComponent>
-      </div>
+      {/* </div> */}
     </div>
   );
 };
